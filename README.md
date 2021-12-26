@@ -1,4 +1,4 @@
-# Ungoogled Chromium in Docker optimized for Unraid
+# Ungoogled-Chromium in Docker optimized for Unraid
 Ungoogled-Chromium is a lightweight approach to removing Google web service dependency from the Chromium project web browser.
 - Ungoogled Chromium is Google Chromium, sans dependency on Google web services.
 - Ungoogled Chromium retains the default Chromium experience as closely as possible. Unlike other Chromium forks that have their own visions of a web browser, Ungoogled Chromium is essentially a drop-in replacement for Chromium.
