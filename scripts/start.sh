@@ -24,7 +24,7 @@ chmod -R 750 /opt/scripts
 chown -R ${UID}:${GID} ${DATA_DIR}
 
 term_handler() {
-	kill -SIGTERM $(pidof chrome)
+	kill -SIGINT $(pidof chrome)
 	tail --pid="$(pidof chrome)" -f 2>/dev/null
 	exit 143;
 }
