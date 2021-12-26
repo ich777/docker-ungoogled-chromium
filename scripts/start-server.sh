@@ -32,8 +32,8 @@ if [ -z "$CUR_V" ]; then
   mkdir -p ${DATA_DIR}/Ungoogled
   tar -C ${DATA_DIR}/Ungoogled --strip-components=1 -xf ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
   rm -R ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
-elif [ "$CUR_V" != "$LAT_V" ]; then
-  echo "---Version missmatch, installed v$CUR_V, downloading and installing latest v$LAT_V...---"
+elif [ "$CUR_V" != "${LAT_V%%-*}" ]; then
+  echo "---Version missmatch, installed v$CUR_V, downloading and installing latest v${LAT_V%%-*}...---"
   cd ${DATA_DIR}
   rm -rf ${DATA_DIR}/Ungoogled
   if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz "https://github.com/mdedonno1337/ungoogled-chromium-binaries/releases/download/${UG_CHROMIUM_V}/ungoogled-chromium_${UG_CHROMIUM_V}_linux.tar.xz" ; then
@@ -45,7 +45,7 @@ elif [ "$CUR_V" != "$LAT_V" ]; then
   mkdir -p ${DATA_DIR}/Ungoogled
   tar -C ${DATA_DIR}/Ungoogled --strip-components=1 -xf ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
   rm -R ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
-elif [ "$CUR_V" == "$LAT_V" ]; then
+elif [ "$CUR_V" == "${LAT_V%%-*}" ]; then
 	echo "---Ungoogled-Chromium v$CUR_V up-to-date---"
 fi
 
