@@ -15,6 +15,7 @@ RUN export TZ=Europe/Rome && \
 	rm /usr/share/novnc/app/images/icons/*
 
 ENV DATA_DIR=/ungoogledchromium
+ENV UG_CHROMIUM_V="latest"
 ENV CUSTOM_RES_W=1024
 ENV CUSTOM_RES_H=768
 ENV CUSTOM_DEPTH=16
