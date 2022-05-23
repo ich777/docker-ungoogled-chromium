@@ -14,7 +14,7 @@ if [ "${UG_CHROMIUM_V}" == "latest" ]; then
     fi
   fi
 else
-  UG_CHROMIUM_V="${LAT_V}"
+  LAT_V="${UG_CHROMIUM_V}"
 fi
 
 rm -rf ${DATA_DIR}/UG-Chromium-*.tar.xz 2>/dev/null
