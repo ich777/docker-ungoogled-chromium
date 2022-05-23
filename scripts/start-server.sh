@@ -12,9 +12,9 @@ if [ "${UG_CHROMIUM_V}" == "latest" ]; then
       echo "---Something went wrong, can't get latest version of Ungoogled-Chromium, putting container into sleep mode---"
       sleep infinity
     fi
-  else
-    UG_CHROMIUM_V="${LAT_V}"
   fi
+else
+  UG_CHROMIUM_V="${LAT_V}"
 fi
 
 rm -rf ${DATA_DIR}/UG-Chromium-*.tar.xz 2>/dev/null
