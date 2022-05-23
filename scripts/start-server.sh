@@ -24,29 +24,29 @@ if [ -z "$CUR_V" ]; then
   echo "---Ungoogled-Chromium not installed, installing---"
   DL_URL="$(wget -qO- https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/${LAT_V} | grep -w "${LAT_V}" | cut -d '"' -f2 | tail -1)"
   cd ${DATA_DIR}
-  if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz "${DL_URL}" ; then
+  if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/UG-Chromium-${LAT_V}.tar.xz "${DL_URL}" ; then
     echo "---Sucessfully downloaded Ungoogled-Chromium---"
   else
     echo "---Something went wrong, can't download Ungoogled-Chromium, putting container in sleep mode---"
     sleep infinity
   fi
   mkdir -p ${DATA_DIR}/Ungoogled
-  tar -C ${DATA_DIR}/Ungoogled --strip-components=1 -xf ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
-  rm -R ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
+  tar -C ${DATA_DIR}/Ungoogled --strip-components=1 -xf ${DATA_DIR}/UG-Chromium-${LAT_V}.tar.xz
+  rm -R ${DATA_DIR}/UG-Chromium-${LAT_V}.tar.xz
 elif [ "$CUR_V" != "${LAT_V%%-*}" ]; then
   echo "---Version missmatch, installed v$CUR_V, downloading and installing latest v${LAT_V%%-*}...---"
   DL_URL="$(wget -qO- https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/${LAT_V} | grep -w "${LAT_V}" | cut -d '"' -f2 | tail -1)"
   cd ${DATA_DIR}
   rm -rf ${DATA_DIR}/Ungoogled
-  if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz "${DL_URL}" ; then
+  if wget -q -nc --show-progress --progress=bar:force:noscroll -O ${DATA_DIR}/UG-Chromium-${LAT_V}.tar.xz "${DL_URL}" ; then
     echo "---Sucessfully downloaded Ungoogled-Chromium---"
   else
     echo "---Something went wrong, can't download Ungoogled-Chromium, putting container in sleep mode---"
     sleep infinity
   fi
   mkdir -p ${DATA_DIR}/Ungoogled
-  tar -C ${DATA_DIR}/Ungoogled --strip-components=1 -xf ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
-  rm -R ${DATA_DIR}/UG-Chromium-${UG_CHROMIUM_V}.tar.xz
+  tar -C ${DATA_DIR}/Ungoogled --strip-components=1 -xf ${DATA_DIR}/UG-Chromium-${LAT_V}.tar.xz
+  rm -R ${DATA_DIR}/UG-Chromium-${LAT_V}.tar.xz
 elif [ "$CUR_V" == "${LAT_V%%-*}" ]; then
 	echo "---Ungoogled-Chromium v$CUR_V up-to-date---"
 fi
