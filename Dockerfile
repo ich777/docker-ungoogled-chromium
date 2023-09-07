@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source="https://github.com/ich777/docker-ungoogle
 
 RUN export TZ=Europe/Rome && \
 	apt-get update && \
-	apt-get -y install --no-install-recommends fonts-takao fonts-arphic-uming xz-utils libgtk-3-0 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon-x11-0 libgbm1 libpango-1.0-0 libcairo2 libasound2 && \
+	apt-get -y install --no-install-recommends fonts-takao fonts-arphic-uming xz-utils libgtk-3-0 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon-x11-0 libgbm1 libpango-1.0-0 libcairo2 libasound2 libpulse0 && \
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \
 	echo "ko_KR.UTF-8 UTF-8" >> /etc/locale.gen && \ 
